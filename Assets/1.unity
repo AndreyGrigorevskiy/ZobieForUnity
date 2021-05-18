@@ -3283,7 +3283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1586234398}
   animator: {fileID: 1586234396}
-  speedMove: 3
+  speedMove: 8
   speedRotate: 180
   minY: -20
   maxY: 20

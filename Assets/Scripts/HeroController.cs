@@ -16,6 +16,8 @@ public class HeroController : MonoBehaviour
 
     public Gun gun;
 
+    private Vector3 moveSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +30,15 @@ public class HeroController : MonoBehaviour
         if(controller.isGrounded)
         {
             float vertical = Input.GetAxis("Vertical");
+            float horizontal = Input.GetAxis("Horizontal");
+            float ySpeed = moveSpeed.y;
             float mx = Input.GetAxis("Mouse X");
             float my = Input.GetAxis("Mouse Y");
-            if (vertical != 0)
+            if ((vertical != 0) || (horizontal !=0))
             {
                 controller.Move(transform.forward * vertical * speedMove * Time.deltaTime);
+
+                controller.Move(transform.right * horizontal * speedMove * Time.deltaTime);
                 animator.SetBool("Walk", true);
             }
             else
